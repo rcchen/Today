@@ -13,6 +13,9 @@
 		331A014E1AA3B4130048B04E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331A014C1AA3B4130048B04E /* LaunchScreen.xib */; };
 		331A015A1AA3B4130048B04E /* TodayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A01591AA3B4130048B04E /* TodayTests.swift */; };
 		33BDBFF81AA3C669001CA1DC /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BDBFF71AA3C669001CA1DC /* GoalViewController.swift */; };
+		33C2C6CC1AA3D606001C6EB2 /* GoalHistoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C2C6CB1AA3D606001C6EB2 /* GoalHistoryTableCell.swift */; };
+		33C2C6CF1AA3E7DA001C6EB2 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C2C6CE1AA3E7DA001C6EB2 /* History.swift */; };
+		33C2C6D31AA3E8E3001C6EB2 /* HistoryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C2C6D21AA3E8E3001C6EB2 /* HistoryCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		331A01581AA3B4130048B04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		331A01591AA3B4130048B04E /* TodayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTests.swift; sourceTree = "<group>"; };
 		33BDBFF71AA3C669001CA1DC /* GoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		33C2C6CB1AA3D606001C6EB2 /* GoalHistoryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalHistoryTableCell.swift; sourceTree = "<group>"; };
+		33C2C6CE1AA3E7DA001C6EB2 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		33C2C6D21AA3E8E3001C6EB2 /* HistoryCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 				33BDBFF61AA3C602001CA1DC /* Goal */,
 				331A01431AA3B4130048B04E /* AppDelegate.swift */,
 				331A01471AA3B4130048B04E /* Main.storyboard */,
+				33C2C6CD1AA3E7C9001C6EB2 /* Models */,
 				331A01411AA3B4130048B04E /* Supporting Files */,
 			);
 			path = Today;
@@ -116,8 +123,18 @@
 			isa = PBXGroup;
 			children = (
 				33BDBFF71AA3C669001CA1DC /* GoalViewController.swift */,
+				33C2C6CB1AA3D606001C6EB2 /* GoalHistoryTableCell.swift */,
 			);
 			name = Goal;
+			sourceTree = "<group>";
+		};
+		33C2C6CD1AA3E7C9001C6EB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				33C2C6CE1AA3E7DA001C6EB2 /* History.swift */,
+				33C2C6D21AA3E8E3001C6EB2 /* HistoryCategory.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +238,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C2C6CC1AA3D606001C6EB2 /* GoalHistoryTableCell.swift in Sources */,
 				33BDBFF81AA3C669001CA1DC /* GoalViewController.swift in Sources */,
+				33C2C6D31AA3E8E3001C6EB2 /* HistoryCategory.swift in Sources */,
+				33C2C6CF1AA3E7DA001C6EB2 /* History.swift in Sources */,
 				331A01441AA3B4130048B04E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
