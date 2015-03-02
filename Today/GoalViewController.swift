@@ -21,6 +21,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var goalTitle: UILabel!
     @IBOutlet weak var goalTags: UILabel!
     @IBOutlet weak var goalDue: UILabel!
+    @IBOutlet weak var goalHistory: UITableView!
 
     // MARK: - Controller variables
     var history = [History]()
@@ -28,9 +29,28 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Data retrieval
 
     private func loadHistory() {
+
+        // Define the potential categories
         let startHistoryCategory = HistoryCategory(categoryName: "Start", categoryImageName: "HistoryStart")
+        let checkpointHistoryCategory = HistoryCategory(categoryName: "Checkpoint", categoryImageName: "HistoryUpdate")
+        let finishHistoryCategory = HistoryCategory(categoryName: "Finish", categoryImageName: "HistoryFinish")
+
+        // Add all the records to the history log
+
         let startHistory = History(category: startHistoryCategory, description: "Task created", timestamp: NSDate())
         history.append(startHistory)
+
+        let checkpointHistory = History(category: checkpointHistoryCategory, description: "Met with group members to finalize bridge design", timestamp: NSDate())
+        history.append(checkpointHistory)
+
+        let checkpointHistory2 = History(category: checkpointHistoryCategory, description: "Built the bridge, assigned parts for the report. Only need to finish writing part of the report and prepare to turn it in.", timestamp: NSDate())
+        history.append(checkpointHistory2)
+
+        let finishHistory = History(category: finishHistoryCategory, description: "Task finished", timestamp: NSDate())
+        history.append(finishHistory)
+        
+        // Reverse the order
+        history = history.reverse()
     }
 
     private func loadTags() {
@@ -61,7 +81,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        var cell = tableView.dequeueReusableCellWithIdentifier(GoalHistoryTableCellIdentifier, forIndexPath: indexPath) as GoalHistoryTableCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(GoalHistoryTableCellIdentifier) as GoalHistoryTableCell
         let record = history[indexPath.row]
 
         // Set the correct image
@@ -78,5 +98,26 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
 
+    /*
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+[self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
+[self.prototypeCell layoutIfNeeded];
 
+CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+return size.height+1;
+}
+*/
+//
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        var cell = tableView.dequeueReusableCellWithIdentifier(GoalHistoryTableCellIdentifier) as GoalHistoryTableCell
+//        let record = history[indexPath.row]
+//        cell.recordDescription.text = record.description
+//        var size = cell.recordDescription.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+//        println(size.height)
+//        return size.height + 1
+//    }
+
+    func computeLabelSize(label: UILabel) {
+    }
 }
